@@ -1,0 +1,35 @@
+<div mat-dailog-content>
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <nav class="navbar navbar-secondary" role="navigation">
+          <div class="row">
+              <div class="navbar-collapse">
+                 
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="navbar-text">
+                          <button class="btn btn-outline-dark" (click)="onNoClick()">
+                            <i class="material-icons"> close </i>
+                          </button>
+                        </li>
+                      </ul>
+                </div>
+          </div>
+          <div class="navbar-secondary-spacing row" *ngIf="received_data">
+              <div class="col-md-6">
+                  <label><strong>View Response </strong></label>
+                </div>
+                
+                <div class="col-md-6">
+                 <label><strong>position: {{received_data.position}}</strong></label>
+                </div>
+               
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <p>name: {{received_data.name}}</p>
+      </div>
+    </div>
+  </div>

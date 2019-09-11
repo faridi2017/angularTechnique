@@ -1,0 +1,8 @@
+<button class="btn btn primary" (click)="passData()">click</button>
+<app-child [childMessage]="parentMessage"></app-child>
+<!--
+parent to child communication:propery binding
+
+parentMessage is defined in the parent.components.ts and passing this data to child using template
+childMessage is defined in the child componenet.ts with @input decorator link data from from parrent
+-->
