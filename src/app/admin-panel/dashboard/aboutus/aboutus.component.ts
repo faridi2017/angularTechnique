@@ -8,7 +8,7 @@ import {AfterViewInit, Component, ElementRef, ViewChild, OnInit} from '@angular/
 export class AboutusComponent implements OnInit, AfterViewInit {
   @ViewChild('myDiv',{static: false}) myDiv: ElementRef;
   // tweetData= {sourceType: 'profile', screenName: 'faridi56888245'}
-tweetData= {sourceType: 'url', screenName: 'https://twitter.com/InfoSys'}
+tweetData= {sourceType: 'url', url: 'https://twitter.com/InfoSys'}
   ngAfterViewInit() {
       console.log(this.myDiv.nativeElement.innerHTML);
   }
