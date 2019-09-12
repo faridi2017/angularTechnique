@@ -98,4 +98,27 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     </div>
 
     -------end of filters----------------
+    ----------twitter time line-----------
+    1. npm install ngx-twitter-timeline --save
+    2. In your module.ts
+    import { NgxTwitterTimelineModule } from 'ngx-twitter-timeline';
+           
+           @NgModule({
+           imports: [
+    ------------,
+    ------------,
+    NgxTwitterTimelineModule
+  ],
+3. In your component.html
+    <ngx-twitter-timeline 
+    [data]="{sourceType: 'url', url: 'https://twitter.com/infosys'}"
+    [opts]="{tweetLimit: 5}"
+></ngx-twitter-timeline>
+
+4. Optional: using  in your component.ts
+      a)  tweetData= {sourceType: 'url', url: 'https://twitter.com/TCS'} in .ts file
+      b)    <ngx-twitter-timeline 
+                    [data]="tweetData"
+                    [opts]="{tweetLimit: 1}"
+            ></ngx-twitter-timeline>  
 
