@@ -124,4 +124,30 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
             -------------------------------------
             
+CREATING SHARED FILTER
+=======================
+CREATE ONE MODULE NAMED SHARED
+  1. NG G MODULE SHARED
+  2. EDIT IN SHARED.MODULE.TS
+  3. PUT YOR FILTER IN DECLARATION ARRAY AND AND EXPORT ARRAY
+     declarations: [ListfiltersPipe],
+     export: [ListfiltersPipe],
+
+  4. import in your required module
+     imports: [SharedModule]
+  5. user in component of your module
+     <form class="form-inline">
+      <div class="form-group col-sm-12 col-md-12">
+        <mat-form-field class="w-100">
+          <input matInput placeholder="search here" [(ngModel)]="itm" [matAutocomplete]="auto"
+            name="itm">
+          <mat-icon matSuffix (click)="clickMat()">search</mat-icon>
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let elt of itemsList | listfilters : itm" [value]="elt">
+              {{elt}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+    </form>
 
