@@ -9,12 +9,12 @@ import { FormsModule } from '@angular/forms';
 
 import { MatAutocompleteModule, MatInputModule, MatFormFieldModule, MatIconModule } from '@angular/material';
 import { FiltersPipe } from 'src/app/services/filters.pipe';
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     QuestionListComponent, 
     QuestionAddComponent,
-    QuestionEditComponent,
-    FiltersPipe
+    QuestionEditComponent
     ],
   imports: [
     CommonModule,
@@ -23,7 +23,8 @@ import { FiltersPipe } from 'src/app/services/filters.pipe';
     MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    SharedModule
 
   ]
 })

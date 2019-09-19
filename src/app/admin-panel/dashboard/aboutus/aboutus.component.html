@@ -1,16 +1,70 @@
-
 <section>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-                <div #myDiv>Some text</div>
+  <div class="container">
+    <div class="row" style="margin-top: 50px">
+      <div class="col-md-6">
+        <form class="form-inline">
+          <div class="form-group col-sm-12 col-md-12">
+            <mat-form-field class="w-100">
+              <input matInput placeholder="search here" [(ngModel)]="searchkey" [matAutocomplete]="auto1"
+                name="searchkey" (change)="onChange()">
+              <mat-icon matSuffix (click)="clickMat()">search</mat-icon>
+              <mat-autocomplete #auto1="matAutocomplete">
+                <mat-option *ngFor="let element of myList | filters : searchkey" [value]="element.name">
+                  {{ element.name }}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </div>
+        </form>
+        <div class="row" *ngIf="searchList">
+          <div *ngFor="let item of searchList">
+            {{item.link}}
+          </div>
+
         </div>
-    <div class="col-md-6">
-    <ngx-twitter-timeline 
-    [data]="tweetData"
-    [opts]="{tweetLimit: 1}"
-></ngx-twitter-timeline>
-</div>
-</div>
-</div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="input-group mb-4">
+          <input type="search" placeholder="search here" aria-describedby="button-addon5" class="form-control"
+            name="search" [(ngModel)]="searchKeyword">
+          <div class="input-group-append">
+            <button id="button-addon5" type="submit" class="btn btn-primary" (click)="search()"><i
+                class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+
+    faridi56888245
+    cse.google.com
+    custome google serch
+    api key:AIzaSyDhazLvRjaTrjhmCdH1HTRuavx77VX8XzU
+    engine id:cx=012522989570619791497:mzvzntqrprm
+-->
+<section>
+    <div class="container">
+    <div class="gcse-search"></div>
+    </div>
+</section>
+<section>
+  <div class="containe">
+    <form class="form-inline">
+      <div class="form-group col-sm-12 col-md-12">
+        <mat-form-field class="w-100">
+          <input matInput placeholder="search here" [(ngModel)]="itm" [matAutocomplete]="auto"
+            name="itm">
+          <mat-icon matSuffix (click)="clickMat()">search</mat-icon>
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let elt of itemsList | listfilters : itm" [value]="elt">
+              {{elt}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
 </section>

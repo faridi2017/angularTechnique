@@ -10,6 +10,7 @@ const routes: Routes = [
       { path: 'response', loadChildren: './response/response.module#ResponseModule' },
       { path: 'comm', loadChildren: './communication/communication.module#CommunicationModule' },
       { path: 'comm2', loadChildren: './child-to-parent/child-to-parent.module#ChildToParentModule' },
+      { path: 'chart', loadChildren: './chartusingamchart/chartusingamchart.module#ChartusingamchartModule' },
      
 //ChildToParentModule
       { path: '', redirectTo: 'dashboard', pathMatch: 'full'}
